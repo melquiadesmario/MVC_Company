@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Companys";
+    List<Business.Company> companys = ViewBag.Companys;
+}
+
+@if (TempData["sucesso"] != null)
+{
+    <div class="alert alert-success">@TempData["sucesso"]</div>
+}
+
+@if (TempData["erro"] != null)
+{
+    <div class="alert alert-danger">@TempData["erro"]</div>
+}
+
+<div>
+    <h1>Empresas</h1>
+    <div>
+        <a href="/empresas/novo" class="btn btn-primary">Nova Empresa</a>
+    </div><br />
+
+    <table class="table">
+        <tr>
+            <td>Id</td>
+            <td>CNPJ</td>
+            <td>Nome Fantasia</td>
+            <td>Telefone</td>
+            <td>Email</td>
+            <td>Data do Cadastro</td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach (var company in companys)
+        {
+    <tr>
+        <td>@company.Id</td>
+        <td>@company.CNPJ</td>
+        <td>@company.NomeFantasia</td>
+        <td>@company.Telefone</td>
+        <td>@company.Email</td>
+        <td>@company.DataCadastro</td>
+        <td>
+            <a href="/empresas/@company.Id/editar" class="btn btn-success">Alterar Empresa</a>
+        </td>
+        <td>
+            <a href="/empresas/@company.Id/excluir" class="btn btn-danger" onclick="ValidaExclusao(@company.Id, event)">Excluir Empresa</a>
+        </td>
+    </tr>
+        }
+    </table>
+</div>

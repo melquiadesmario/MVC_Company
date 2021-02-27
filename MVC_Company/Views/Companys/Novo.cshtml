@@ -1,0 +1,30 @@
+﻿<div>
+    <h1>Empresas</h1>
+    <div>
+        <a href="/empresas" class="btn btn-default">Voltar</a>
+    </div><br />
+    
+    <form action="/empresas/criar" method="post">
+        <div class="form-group">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" class="form-control" id="cnpj" name="cnpj" />
+        </div>
+        <div class="form-group">
+            <label for="nome_fantasia">Nome Fantasia:</label>
+            <input type="text" class="form-control" id="nome_fantasia" name="nome_fantasia" />
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" name="telefone" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" />
+        </div>
+        <div class="form-group">
+            <label for="data_cadastro">Data do Cadastro:</label>
+            <input type="datetime" class="form-control" id="data_cadastro" name="data_cadastro" />
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
